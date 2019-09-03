@@ -6,12 +6,26 @@
 
 # YOUR CODE HERE
 
+def f1(x,y):
+    return x+y
+
 print(f1(1, 2))
 
 # Write a function f2 that takes any number of integer arguments and prints the
 # sum. Google for "python arbitrary arguments" and look for "*args"
 
 # YOUR CODE HERE
+def f2(*args):
+    x = 0
+    print(args)
+    if type(args[0]) == list:
+        for arg in args[0]:
+            x = x + arg
+        return x
+    else: 
+        for arg in range(len(args)):
+            x += args[arg]
+        return x
 
 print(f2(1))                    # Should print 1
 print(f2(1, 3))                 # Should print 4
@@ -29,8 +43,18 @@ print(f2(a))    # Should print 22
 
 # YOUR CODE HERE
 
+def f3(num1, num2 = None):
+    if num2 == None:
+        num1 = num1 + 1
+        return num1
+    else:
+        num3 = num1 + num2
+        return num3
+
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
+
+
 
 
 # Write a function f4 that accepts an arbitrary number of keyword arguments and
@@ -42,6 +66,13 @@ print(f3(8))     # Should print 9
 # Google "python keyword arguments".
 
 # YOUR CODE HERE
+
+def f4(d={}, **what):
+    for k, v in d.items():
+        print(f'key: {k}, value: {v}')
+    for k, v in what.items():
+        print(f'key: {k}, value: {v}')
+    
 
 # Should print
 # key: a, value: 12

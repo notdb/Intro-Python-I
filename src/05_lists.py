@@ -35,3 +35,10 @@ print(len(x))
 def multiply(n):
     return n*1000
 print(list(map(multiply, x)))
+
+def f2(n):
+    for z in range(len(n)):
+        z += n[z]
+    return z
+
+print(f2(x))
