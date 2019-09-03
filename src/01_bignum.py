@@ -3,4 +3,4 @@
 
 # YOUR CODE HERE
 
-print(pow(5,65536))
+print(pow(5,65536))if int(x)/2 is int
